@@ -3,7 +3,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "serve": "sirv dist -c",
+    "serve": "sirv dist -c --port 5002",
     "test": "jest",
     "format": "prettier --write --plugin-search-dir=. .",
     "check-format": "prettier --plugin-search-dir=. --check ."

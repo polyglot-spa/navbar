@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import copy from "rollup-plugin-copy";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -18,6 +19,12 @@ export default {
   plugins: [
     postcss({
       extensions: [ '.css' ],
+    }),
+    copy({
+      targets: [
+        { src: 'assets/fonts', dest: 'dist/public/fonts' },
+        { src: 'assets/images', dest: 'dist/public/images' }
+      ]
     }),
     svelte({
       // enable run-time checks when not in production

@@ -1,15 +1,31 @@
 <script>
     import { Dropdown } from "bootstrap";
     import "./css/custom.css";
+    let owlSrc =  "http://localhost:5002/assets/images/owl-svgrepo-com.svg"
 </script>
 
 <style>
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+    #owl-logo {
+        width: 90px;
+    }
+    @font-face {
+        font-family: "Bananas-Personal";
+        src: url("http://localhost:5002/assets/fonts/BananasPersonalUse.ttf") format("truetype");
+    }
+    #header-text {
+        font-family: Bananas-Personal;
+        font-size: 75px !important;
+        letter-spacing: 10px;
+    }
 </style>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,11 +35,11 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Github Repo</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        Micro-frontends
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="react">React Application</a></li>
@@ -32,7 +48,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Internet OFF Switch</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -42,3 +58,11 @@
         </div>
     </div>
 </nav>
+<header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img id="owl-logo" src={owlSrc} alt=""/>
+            <span id="header-text" class="fs-4">Polyglot SPA</span>
+        </a>
+    </div>
+</header>

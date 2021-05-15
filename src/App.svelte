@@ -1,7 +1,7 @@
 <script>
     import { Dropdown } from "bootstrap";
     import "./css/custom.css";
-    let owlSrc =  "http://localhost:5002/assets/images/owl-svgrepo-com.svg"
+    import owlSvgSrc from "./assets/images/owl-svgrepo-com.svg"
 </script>
 
 <style>
@@ -61,7 +61,7 @@
 <header class="py-3 mb-4 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img id="owl-logo" src={owlSrc} alt=""/>
+            <img id="owl-logo" src={owlSvgSrc} alt=""/>
             <span id="header-text" class="fs-4">Polyglot SPA</span>
         </a>
     </div>

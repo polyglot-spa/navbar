@@ -4,7 +4,8 @@ import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
-import copy from "rollup-plugin-copy";
+import image from "@rollup/plugin-image";
+import copy from "rollup-plugin-copy-assets";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -17,20 +18,24 @@ export default {
     file: "dist/carter-website-navbar-cw.js",
   },
   plugins: [
-    postcss({
-      extensions: [ '.css' ],
-    }),
-    copy({
-      targets: [
-        { src: 'assets/fonts', dest: 'dist/public/fonts' },
-        { src: 'assets/images', dest: 'dist/public/images' }
-      ]
-    }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
 
       emitCss: false,
+    }),
+    copy(
+        {
+          assets: [
+              "src/assets"
+          ]
+        }
+    ),
+    image(),
+    postcss(),
+    resolve({
+      browser: true,
+      dedupe: ["svelte"],
     }),
 
     // If you have external dependencies installed from
@@ -38,10 +43,6 @@ export default {
     // some cases you'll need additional configuration -
     // consult the documentation for details:
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
     commonjs(),
 
     // In dev mode, call `npm run start` once

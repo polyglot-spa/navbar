@@ -21,6 +21,9 @@
         font-size: 75px !important;
         letter-spacing: 10px;
     }
+    #primary-header {
+        background-color: #e5c7ca;
+    }
 </style>
 
 
@@ -58,7 +61,7 @@
         </div>
     </div>
 </nav>
-<header class="py-3 mb-4 border-bottom">
+<header id="primary-header" class="py-0 mb-1 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img id="owl-logo" src={owlSvgSrc} alt=""/>

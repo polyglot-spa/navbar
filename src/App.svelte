@@ -1,7 +1,7 @@
 <script>
     import { Dropdown } from "bootstrap";
     import "./css/custom.css";
-    import owlSvgSrc from "./assets/images/owl-svgrepo-com.svg"
+    import owlSvgSrc from "./assets/images/owl-svgrepo-com.svg";
 </script>
 
 <style>
@@ -38,7 +38,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Github Repo</a>
+                    <a class="nav-link" href="https://github.com/polyglot-spa" target="_blank" rel="noopener noreferrer">Github Repo</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

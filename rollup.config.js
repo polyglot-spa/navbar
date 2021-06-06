@@ -10,12 +10,12 @@ import copy from "rollup-plugin-copy-assets";
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: "src/carter-website-navbar-cw.js",
+  input: "src/polyglot-spa-navbar.js",
   output: {
     sourcemap: true,
     format: "system",
     name: null, // ensure anonymous System.register
-    file: "dist/carter-website-navbar-cw.js",
+    file: "dist/polyglot-spa-navbar.js",
   },
   plugins: [
     svelte({

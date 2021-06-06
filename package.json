@@ -1,5 +1,5 @@
 {
-  "name": "@carter-website/navbar-cw",
+  "name": "@polyglot-spa/navbar",
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",

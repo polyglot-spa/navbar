@@ -45,9 +45,9 @@
                         Micro-frontends
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="react">React Application</a></li>
-                        <li><a class="dropdown-item" href="vue">Vue Application</a></li>
-                        <li><a class="dropdown-item" href="angular">Angular Application</a></li>
+                        <li><a class="dropdown-item" href="angular-chess">Angular Application</a></li>
+                        <li><a class="dropdown-item" href="react-chess">React Application</a></li>
+                        <li><a class="dropdown-item" href="vue-chess">Vue Application</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

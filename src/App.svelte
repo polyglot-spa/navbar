@@ -9,19 +9,19 @@
         vertical-align: -.125em;
         fill: currentColor;
     }
-    #owl-logo {
+    #owlLogo {
         width: 90px;
     }
     @font-face {
         font-family: "Bananas-Personal";
         src: url("http://localhost:5002/assets/fonts/BananasPersonalUse.ttf") format("truetype");
     }
-    #header-text {
+    #headerText {
         font-family: Bananas-Personal;
         font-size: 75px !important;
         letter-spacing: 10px;
     }
-    #primary-header {
+    #primaryHeader {
         background-color: #e5c7ca;
     }
 </style>
@@ -61,11 +61,11 @@
         </div>
     </div>
 </nav>
-<header id="primary-header" class="py-0 border-bottom">
+<header id="primaryHeader" class="py-0 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <img id="owl-logo" src={owlSvgSrc} alt=""/>
-            <span id="header-text" class="fs-4">Polyglot SPA</span>
+            <img id="owlLogo" src={owlSvgSrc} alt=""/>
+            <span id="headerText" class="fs-4">Polyglot SPA</span>
         </a>
     </div>
 </header>

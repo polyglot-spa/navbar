@@ -1,6 +1,6 @@
 {
   "name": "@polyglot-spa/navbar",
-  "description": "The Svelte micro-front end that is the navbar for Polyglot SPA",
+  "description": "The Svelte micro-front end that is the navbar for Polyglot SPA.",
   "version": "0.1.0",
   "scripts": {
     "build": "rollup -c",

@@ -55,6 +55,7 @@ workflows:
           requires:
             - setup
       - deploy:
+          context: AWS S3
           requires:
             - build
           filters:

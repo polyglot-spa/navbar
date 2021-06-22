@@ -1,16 +1,62 @@
-# This config uses the `.circleci/extended/orb-test.yml` as its base, and then publishes the app to S3.
-# The workflow contained here demonstrates a practical application of `post-steps`
-# and using workspace persistence
 version: 2.1
-
 orbs:
   aws-s3: circleci/aws-s3@2.0
-
-workflows:
-  build-and-deploy:
-    jobs:
-      - run: npm run build
+jobs:
+  setup:
+    docker:
+      - image: circleci/node:12.13.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install
+          command: npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+  build:
+    docker:
+      - image: circleci/node:12.13.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Build
+          command: |
+            npm run build
+            ls dist
+      - save_cache:
+          key: build-output-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - dist
+      - store_artifacts:
+          path: dist
+          destination: dist
+  deploy:
+    docker:
+      - image: circleci/node:12.13.1
+    steps:
+      - restore_cache:
+          key: build-output-{{ .Environment.CIRCLE_SHA1 }}
+      - run: ls
       - aws-s3/copy:
-          from: dist/
-          to: s3://polyglot-spa-navbar
           arguments: --recursive
+          from: dist/
+          to: 's3://polyglot-spa-navbar'
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: main

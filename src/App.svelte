@@ -14,7 +14,7 @@
     }
     @font-face {
         font-family: "Bananas-Personal";
-        src: url("https://polyglot-spa-navbar.s3.us-east-2.amazonaws.com/dist/assets/fonts/BananasPersonalUse.ttf") format("truetype");
+        src: url("https://polyglot-spa-navbar.s3.us-east-2.amazonaws.com/assets/fonts/BananasPersonalUse.ttf") format("truetype");
         /*src: url("http://localhost:5002/assets/fonts/BananasPersonalUse.ttf") format("truetype");*/
     }
     #headerText {

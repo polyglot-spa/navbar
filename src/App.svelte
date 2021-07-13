@@ -1,7 +1,36 @@
 <script>
+    import { onMount } from 'svelte';
     import { Dropdown } from "bootstrap";
     import "./css/custom.css";
     import owlSvgSrc from "./assets/images/owl-svgrepo-com.svg";
+    onMount(() => {
+        let emitter;
+        let getWindowEmitterMaxTriers = null;
+
+        const attachEmitter = () => {
+            return new Promise((resolve, reject) => {
+                waitForEmitterOnWindow(resolve, reject);
+            });
+        };
+
+        const waitForEmitterOnWindow = (resolve, reject) => {
+            if (!getWindowEmitterMaxTriers) {
+                getWindowEmitterMaxTriers = 10;
+            }
+            if (!window.emitter) {
+                if (getWindowEmitterMaxTriers > 0) {
+                    setTimeout(waitForEmitterOnWindow.bind(this, resolve, reject), 300);
+                }
+            } else {
+                resolve();
+            }
+        }
+
+        attachEmitter().then(() => {
+            emitter = window.emitter;
+            emitter.emit('hello', "Navbar MFE");
+        });
+    });
 </script>
 
 <style>
